@@ -183,7 +183,7 @@ void Prepare::FindComponents(unsigned max_edge_id, const DeallocatingVector<Edge
         }
     }
 
-    tbb::parallel_sort(edges.begin(), edges.end());
+    tbb::parallel_sort(edges);
     auto new_end = std::unique(edges.begin(), edges.end());
     edges.resize(new_end - edges.begin());
 
@@ -226,7 +226,7 @@ std::size_t Prepare::WriteContractedGraph(unsigned max_node_id,
     const unsigned crc32_value = CalculateEdgeChecksum(std::move(node_based_edge_list));
 
     // Sorting contracted edges in a way that the static query graph can read some in in-place.
-    tbb::parallel_sort(contracted_edge_list->begin(), contracted_edge_list->end());
+    tbb::parallel_sort(contracted_edge_list);
     const unsigned contracted_edge_count = contracted_edge_list->size();
     SimpleLogger().Write() << "Serializing compacted graph of " << contracted_edge_count
                            << " edges";
