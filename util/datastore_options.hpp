@@ -29,7 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define DATASTORE_OPTIONS_HPP
 
 #include "boost_filesystem_2_fix.hpp"
-#include "git_sha.hpp"
+#include "version.hpp"
 #include "ini_file.hpp"
 #include "osrm_exception.hpp"
 #include "simple_logger.hpp"
@@ -108,7 +108,7 @@ bool GenerateDataStoreOptions(const int argc, const char *argv[], ServerPaths &p
 
     if (option_variables.count("version"))
     {
-        SimpleLogger().Write() << g_GIT_DESCRIPTION;
+        SimpleLogger().Write() << OSRM_VERSION;
         return false;
     }
 
