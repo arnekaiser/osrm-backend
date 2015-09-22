@@ -557,11 +557,11 @@ BOOST_AUTO_TEST_CASE(bearing_tests)
     BOOST_CHECK_EQUAL(results.back().reverse_node_id, 1);
 
     results.clear();
-    rtree.IncrementalFindPhantomNodeForCoordinate( input, results, 5, 1100, 12, 270, 10);
+    rtree.IncrementalFindPhantomNodeForCoordinate( input, results, 5, 1100, 270, 10);
     BOOST_CHECK_EQUAL(results.size(), 0);
 
     results.clear();
-    rtree.IncrementalFindPhantomNodeForCoordinate( input, results, 5, 1100, 12, 45, 10);
+    rtree.IncrementalFindPhantomNodeForCoordinate( input, results, 5, 1100, 45, 10);
     BOOST_CHECK_EQUAL(results.size(), 2);
     BOOST_CHECK_EQUAL(results[0].forward_node_id, 1);
     BOOST_CHECK_EQUAL(results[0].reverse_node_id, SPECIAL_NODEID);
@@ -574,11 +574,11 @@ BOOST_AUTO_TEST_CASE(bearing_tests)
     BOOST_CHECK_EQUAL(distance_results.size(), 2);
 
     distance_results.clear();
-    rtree.IncrementalFindPhantomNodeForCoordinateWithDistance( input, distance_results, 11000, 12, 270, 10 );
+    rtree.IncrementalFindPhantomNodeForCoordinateWithDistance( input, distance_results, 11000, 270, 10 );
     BOOST_CHECK_EQUAL(distance_results.size(), 0);
 
     distance_results.clear();
-    rtree.IncrementalFindPhantomNodeForCoordinateWithDistance( input, distance_results, 11000, 12, 45, 10 );
+    rtree.IncrementalFindPhantomNodeForCoordinateWithDistance( input, distance_results, 11000, 45, 10 );
     BOOST_CHECK_EQUAL(distance_results.size(), 2);
     BOOST_CHECK_EQUAL(distance_results[0].first.forward_node_id, 1);
     BOOST_CHECK_EQUAL(distance_results[0].first.reverse_node_id, SPECIAL_NODEID);

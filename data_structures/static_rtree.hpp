@@ -690,9 +690,9 @@ class StaticRTree
         std::vector<PhantomNode> &result_phantom_node_vector,
         const unsigned max_number_of_phantom_nodes,
         const float max_distance = 1100,
-        const unsigned max_checked_elements = 4 * LEAF_NODE_SIZE,
         const int filter_bearing = 0,
-        const int filter_bearing_range = 180)
+        const int filter_bearing_range = 180,
+        const unsigned max_checked_elements = 4 * LEAF_NODE_SIZE)
     {
         unsigned inspected_elements = 0;
         unsigned number_of_elements_from_big_cc = 0;
@@ -856,9 +856,9 @@ class StaticRTree
         const FixedPointCoordinate &input_coordinate,
         std::vector<std::pair<PhantomNode, double>> &result_phantom_node_vector,
         const double max_distance,
-        const unsigned max_checked_elements = 4 * LEAF_NODE_SIZE,
         const int filter_bearing = 0,
-        const int filter_bearing_range = 180)
+        const int filter_bearing_range = 180,
+        const unsigned max_checked_elements = 4 * LEAF_NODE_SIZE)
     {
         unsigned inspected_elements = 0;
 

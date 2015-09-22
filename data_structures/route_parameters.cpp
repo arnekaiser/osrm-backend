@@ -117,6 +117,15 @@ void RouteParameters::addTimestamp(const unsigned timestamp)
     }
 }
 
+void RouteParameters::addBearing(const int bearing)
+{
+    bearings.resize(coordinates.size());
+    if (!bearings.empty())
+    {
+        bearings.back() = bearing;
+    }
+}
+
 void RouteParameters::setLanguage(const std::string &language_string)
 {
     language = language_string;

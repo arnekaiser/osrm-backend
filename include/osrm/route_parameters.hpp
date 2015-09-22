@@ -71,6 +71,8 @@ struct RouteParameters
 
     void addTimestamp(const unsigned timestamp);
 
+    void addBearing(const int timestamp);
+
     void setLanguage(const std::string &language);
 
     void setGeometryFlag(const bool flag);
@@ -99,6 +101,7 @@ struct RouteParameters
     std::string language;
     std::vector<std::string> hints;
     std::vector<unsigned> timestamps;
+    std::vector<int> bearings;
     std::vector<bool> uturns;
     std::vector<FixedPointCoordinate> coordinates;
 };
