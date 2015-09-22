@@ -40,7 +40,7 @@ template <typename Iterator, class HandlerT> struct APIGrammar : qi::grammar<Ite
     {
         api_call = qi::lit('/') >> string[boost::bind(&HandlerT::setService, handler, ::_1)] >>
                    *(query) >> -(uturns);
-        query = ('?') >> (+(zoom | output | jsonp | checksum | location | hint | timestamp | u | cmp |
+        query = ('?') >> (+(zoom | output | jsonp | checksum | location | hint | timestamp | bearing | u | cmp |
                             language | instruction | geometry | alt_route | old_API | num_results |
                             matching_beta | gps_precision | classify | locs));
 
