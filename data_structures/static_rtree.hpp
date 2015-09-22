@@ -814,7 +814,7 @@ class StaticRTree
 
                 // set forward and reverse weights on the phantom node
                 SetForwardAndReverseWeightsOnPhantomNode(current_segment,
-                                                        result_phantom_node_vector.back());
+                                                         result_phantom_node_vector.back());
 
                 // update counts on what we found from which result class
                 if (current_segment.is_in_tiny_cc())
